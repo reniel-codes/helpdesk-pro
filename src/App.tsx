@@ -1,10 +1,48 @@
+import { BrowserRouter, Link, Route, Routes } from 'react-router'
+import { AppLayout } from './components/layout/AppLayout'
+import { AssetsPage } from './features/assets/AssetsPage'
+import { AuthProvider } from './features/auth/AuthProvider'
+import { LoginPage } from './features/auth/LoginPage'
+import { ProtectedRoute } from './features/auth/ProtectedRoute'
+import { UsersPage } from './features/admin/UsersPage'
+import { DashboardPage } from './features/dashboard/DashboardPage'
+import { TicketsPage } from './features/tickets/TicketsPage'
+
 function App() {
   return (
-    <main className="flex min-h-screen items-center justify-center bg-slate-50">
-      <div className="text-center">
-        <h1 className="text-3xl font-bold text-slate-900">HelpDesk Pro</h1>
-        <p className="mt-2 text-slate-600">IT Support Ticketing &amp; Asset Management</p>
-      </div>
+    <BrowserRouter>
+      <AuthProvider>
+        <Routes>
+          <Route path="/login" element={<LoginPage />} />
+
+          {/* Everything inside here requires a logged-in user. */}
+          <Route element={<ProtectedRoute />}>
+            <Route element={<AppLayout />}>
+              <Route index element={<DashboardPage />} />
+              <Route path="tickets" element={<TicketsPage />} />
+              <Route path="assets" element={<AssetsPage />} />
+
+              {/* Admin-only pages. */}
+              <Route element={<ProtectedRoute allowedRoles={['admin']} />}>
+                <Route path="users" element={<UsersPage />} />
+              </Route>
+            </Route>
+          </Route>
+
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </AuthProvider>
+    </BrowserRouter>
+  )
+}
+
+function NotFound() {
+  return (
+    <main className="flex min-h-screen flex-col items-center justify-center gap-2 px-4 text-center">
+      <h1 className="text-2xl font-bold text-slate-900">Page not found</h1>
+      <Link to="/" className="text-blue-600 hover:underline">
+        Go to dashboard
+      </Link>
     </main>
   )
 }

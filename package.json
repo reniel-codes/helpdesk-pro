@@ -11,7 +11,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "typecheck": "tsc -b",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "gen:types": "supabase gen types typescript --linked > src/types/database.ts"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.118.0",
