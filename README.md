@@ -1,32 +1,39 @@
-# React + TypeScript + Vite
+# HelpDesk Pro
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+IT Support Ticketing and Asset Management System.
 
-Currently, two official plugins are available:
+> 🚧 Work in progress — full documentation, screenshots, and setup guide coming soon.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tech stack
 
-## React Compiler
+- React, TypeScript, Vite, Tailwind CSS
+- Supabase (PostgreSQL, Authentication, Row Level Security)
+- Vitest + React Testing Library (unit and component tests)
+- Playwright (end-to-end tests)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Roles
 
-## Expanding the Oxlint configuration
+| Role | Can do |
+|---|---|
+| Employee | Submit tickets, view own tickets and assigned assets |
+| IT Staff | Manage all tickets and assets |
+| Admin | Everything above, plus manage user roles and delete records |
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+## Run locally
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm install
+cp .env.example .env.local   # then fill in your Supabase URL and publishable key
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Scripts
+
+| Command | What it does |
+|---|---|
+| `npm run dev` | Start the dev server |
+| `npm test` | Run unit and component tests |
+| `npm run test:e2e` | Run Playwright end-to-end tests |
+| `npm run typecheck` | Check TypeScript types |
+| `npm run lint` | Lint the code |
+| `npm run build` | Production build |
