@@ -1,5 +1,6 @@
 import { BrowserRouter, Link, Route, Routes } from 'react-router'
 import { AppLayout } from './components/layout/AppLayout'
+import { AssetFormPage } from './features/assets/AssetFormPage'
 import { AssetsPage } from './features/assets/AssetsPage'
 import { AuthProvider } from './features/auth/AuthProvider'
 import { LoginPage } from './features/auth/LoginPage'
@@ -25,6 +26,12 @@ function App() {
               <Route path="tickets/new" element={<NewTicketPage />} />
               <Route path="tickets/:id" element={<TicketDetailPage />} />
               <Route path="assets" element={<AssetsPage />} />
+
+              {/* Staff-only pages. */}
+              <Route element={<ProtectedRoute allowedRoles={['admin', 'it_staff']} />}>
+                <Route path="assets/new" element={<AssetFormPage />} />
+                <Route path="assets/:id/edit" element={<AssetFormPage />} />
+              </Route>
 
               {/* Admin-only pages. */}
               <Route element={<ProtectedRoute allowedRoles={['admin']} />}>
