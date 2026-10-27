@@ -7,21 +7,21 @@ Run these in the browser before each release and record the result.
 |---|---|
 | **Build / commit** | _fill in (`git log --oneline -1`)_ |
 | **Tester** | Reniel Perez |
-| **Date run** | _YYYY-MM-DD_ |
+| **Date run** | 2026-10-27 |
 | **Browser** | _e.g. Chrome 140, Windows 11_ |
 
 ## Authentication
 
 | ID | Role | Steps | Expected result | Result |
 |---|---|---|---|---|
-| TC-AUTH-01 | — | Open `/tickets` while logged out | Redirected to the login page | |
-| TC-AUTH-02 | — | Click **Sign in** with both fields empty | "Email is required." and "Password is required." shown; no request sent | |
-| TC-AUTH-03 | — | Enter `notanemail` and any password, sign in | "Enter a valid email address." | |
-| TC-AUTH-04 | Employee | Correct email, wrong password | "Invalid email or password." Stays on login page | |
-| TC-AUTH-05 | — | Unknown email `nobody@helpdesk.test` | Same message as TC-AUTH-04 (does not reveal whether the account exists) | |
-| TC-AUTH-06 | Employee | Log in from `/login` after TC-AUTH-01 | Lands on `/tickets` (the page originally requested) | |
-| TC-AUTH-07 | Any | Log in, then refresh the page | Still logged in | |
-| TC-AUTH-08 | Any | Click **Sign out** | Returned to login; pressing Back does not show app pages | |
+| TC-AUTH-01✅ | — | Open `/tickets` while logged out | Redirected to the login page | |
+| TC-AUTH-02✅ | — | Click **Sign in** with both fields empty | "Email is required." and "Password is required." shown; no request sent | |
+| TC-AUTH-03✅ | — | Enter `notanemail` and any password, sign in | "Enter a valid email address." | |
+| TC-AUTH-04✅ | Employee | Correct email, wrong password | "Invalid email or password." Stays on login page | |
+| TC-AUTH-05✅ | — | Unknown email `nobody@helpdesk.test` | Same message as TC-AUTH-04 (does not reveal whether the account exists) | |
+| TC-AUTH-06✅ | Employee | Log in from `/login` after TC-AUTH-01 | Lands on `/tickets` (the page originally requested) | |
+| TC-AUTH-07✅ | Any | Log in, then refresh the page | Still logged in | |
+| TC-AUTH-08✅ | Any | Click **Sign out** | Returned to login; pressing Back does not show app pages | |
 
 ## Navigation and access
 
