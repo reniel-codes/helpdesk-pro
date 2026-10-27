@@ -6,6 +6,8 @@ import { LoginPage } from './features/auth/LoginPage'
 import { ProtectedRoute } from './features/auth/ProtectedRoute'
 import { UsersPage } from './features/admin/UsersPage'
 import { DashboardPage } from './features/dashboard/DashboardPage'
+import { NewTicketPage } from './features/tickets/NewTicketPage'
+import { TicketDetailPage } from './features/tickets/TicketDetailPage'
 import { TicketsPage } from './features/tickets/TicketsPage'
 
 function App() {
@@ -20,6 +22,8 @@ function App() {
             <Route element={<AppLayout />}>
               <Route index element={<DashboardPage />} />
               <Route path="tickets" element={<TicketsPage />} />
+              <Route path="tickets/new" element={<NewTicketPage />} />
+              <Route path="tickets/:id" element={<TicketDetailPage />} />
               <Route path="assets" element={<AssetsPage />} />
 
               {/* Admin-only pages. */}

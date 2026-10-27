@@ -81,7 +81,8 @@ Bugs are written up in [`docs/bug-reports/`](bug-reports/) using this severity s
 | Login form validation | 10 unit + 5 component | ✅ Passing |
 | Route protection | 6 component | ✅ Passing |
 | Role-based navigation | 5 component | ✅ Passing |
-| RLS / permissions | 32 security tests | ⏳ Run pending |
-| Tickets UI | — | Week 2 |
+| RLS / permissions | 32 security tests | ✅ Passing |
+| Ticket validation | 14 unit | ✅ Passing |
+| Tickets UI (list, create, detail, notes) | 20 component + [38 manual cases](test-cases.md) | ✅ Automated passing · ⏳ Manual run pending |
 | Assets, search, dashboard | — | Week 3 |
 | End-to-end journeys | — | Week 4 |
