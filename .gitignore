@@ -26,3 +26,6 @@ dist-ssr
 # Supabase CLI local state
 supabase/.temp
 supabase/.branches
+
+# Personal study notes (kept off GitHub)
+docs/study-guide.md
