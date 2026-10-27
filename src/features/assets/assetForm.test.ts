@@ -48,7 +48,7 @@ describe('validateAsset', () => {
   // 👉 YOUR TURN: replace `it.todo` with a real test (copy the shape of the
   // "requires asset tag and serial number" test above). Run `npm run test:watch`
   // and watch it go from "todo" to green.
-  it.todo('rejects a serial number that is only spaces')
+  it('rejects a serial number that is only spaces', () => { expect(validateAsset(form({ serial_number: '   ' }), TODAY).serial_number).toBe('Serial number is required.') })
 })
 
 describe('toAssetInput', () => {
