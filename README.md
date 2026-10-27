@@ -33,6 +33,7 @@ npm run dev
 |---|---|
 | `npm run dev` | Start the dev server |
 | `npm test` | Run unit and component tests |
+| `npm run test:rls` | Run database security tests against Supabase (needs `.env.test.local`) |
 | `npm run test:e2e` | Run Playwright end-to-end tests |
 | `npm run typecheck` | Check TypeScript types |
 | `npm run lint` | Lint the code |

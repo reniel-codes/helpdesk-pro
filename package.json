@@ -12,7 +12,8 @@
     "test:watch": "vitest",
     "typecheck": "tsc -b",
     "test:e2e": "playwright test",
-    "gen:types": "supabase gen types typescript --linked > src/types/database.ts"
+    "gen:types": "supabase gen types typescript --linked > src/types/database.ts",
+    "test:rls": "vitest run --config vitest.rls.config.ts"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.118.0",
